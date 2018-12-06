@@ -7,18 +7,19 @@ let room = new Room;
 let url = window.location.pathname;
 let navigate = url.substring(url.lastIndexOf('/')+1)
 let coll: HTMLCollection = <HTMLCollection> document.getElementsByClassName("collapsible")
-let createroom: HTMLButtonElement = <HTMLButtonElement> document.getElementById("createroom")
+let createroom: HTMLLinkElement = <HTMLLinkElement> document.getElementById("createroom")
+let homediv: HTMLDivElement = <HTMLDivElement> document.getElementById("homediv")
 
 function check(){
-    if (navigate == "room.htm"){
-        room.getMacadresses();
+    if (navigate === "room.html"){
+        //room.getMacadresses();
         room.getrooms();
     }
-}
-
-// createroom.addEventListener('click', function(){
+    else if(navigate === "create.html"){
+        room.setupCreate();
+    }
     
-// })
+}
 
 for(var i = 0; i < coll.length; i++){
     coll[i].addEventListener("click", function() {
@@ -33,4 +34,4 @@ for(var i = 0; i < coll.length; i++){
     });
 }
 
-check();
+check()
