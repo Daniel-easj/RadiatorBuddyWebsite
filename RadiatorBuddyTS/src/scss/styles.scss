@@ -7,8 +7,7 @@ body {
     color: #323232;
     font-family: 'Roboto', sans-serif;
     font-size: 19px;    
-    font-weight: 900;    
-    text-transform: uppercase;
+    font-weight: 900;
     margin: 0;
 }
 
@@ -27,34 +26,28 @@ html {
 h1 {
     margin-top: 0;
     margin-bottom: 0px;
-    font-size: 35px;
+    font-size: 40px;
 }
 
 table {
+    margin-top: 10px;
     margin-bottom: 30px;
-    width: 100%;
-    border-collapse: collapse;
+    width: 80%;
+    //border-collapse: collapse;
     border-top: 4px solid #000000;
     border-bottom: 4px solid #000000;    
     color: #323232;
-}
-
-table > thead > tr#boardtitles {
-    font-size: 10px;
-    height: 60px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 td{
-    padding: 20px;
     font-size: 17px;
 }
 
 .lefttd{
     text-align: right;
-}
-
-form{
-    padding-top: 15px;
+    padding: 30px;
 }
 
 .input {
@@ -64,12 +57,13 @@ form{
     font-family: 'Roboto', sans-serif;
     font-size: 17px;
     font-weight: 900;
-    width: 50%;
+    width: 277px;
+    
 }
 
 .button {    
     background-color: #c4c4c4;
-    border: 4px solid #444 ;
+    border: 1px solid #444 ;
     //box-shadow: 0 3px 5px rgba(49,112,142, 0.55);
     color: #323232;
     display: block;
@@ -83,6 +77,8 @@ form{
     transition: all 0.3s ease-in-out 0s;
     width: 25%;
     margin-top: 10px;
+    border-radius: 3px;
+    margin-bottom: 5px;
 }
 
 .button:hover {
@@ -119,12 +115,17 @@ form{
     background-color: rgb(151, 151, 151);
     color: #444;
     cursor: pointer;
-    padding: 18px;
-    width: 100%;
+    padding: 20px;
+    width: 99%;
     border: none;
     text-align: left;
     outline: none;
-    font-size: 15px;
+    margin-bottom: 7px;
+    margin-left: 7px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    font-size: 20px;
+    border-radius: 5px;
 }
 
 .active, .collapsible:hover{
@@ -151,4 +152,101 @@ form{
     transition: max-height 0.2s ease-out;
 }
 
+select{
+    display: block;
+    color: #323232;
+    padding: 9px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    font-weight: 900;
+    width: 300px;
+}
+
+.toggle{
+    text-align: left;
+}
+
+#topbar{
+    background-color: rgb(151, 151, 151);
+    color: #444;
+    width: 99%;
+    margin: 0px;
+    border: none;
+    outline: none;
+    margin-top: 5px;
+    margin-bottom: 7px;
+    margin-left: 7px;
+    margin-right: 19px;
+    border-radius: 5px;
+    height: 63px;
+    position: relative;
+
+}
+
+#link{
+    background-color: rgb(151, 151, 151);
+    color: #323232;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 900;
+    text-align: center;    
+    letter-spacing: 0.3px;
+    padding: 22px 20px;
+
+}
+
+#link:hover{
+    background-color: #ccc
+}
+
+#optimaltemp{   
+    text-align: right;
+}
+
+#tempinput{
+    color: #323232;
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    font-weight: 900;
+    width: 60px;
+}
+
+#specialtd{
+    height: 63px;
+}
+
+#mactext{
+    font-size: 17px;
+    font-weight: 900;
+    text-align: left;    
+    letter-spacing: 0.3px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.savebutton{
+    background-color: #c4c4c4;
+    border: 1px solid #444 ;
+    //box-shadow: 0 3px 5px rgba(49,112,142, 0.55);
+    color: #323232;
+    display: block;
+    font-family: 'Roboto', sans-serif;
+    font-size: 22px;
+    font-weight: 900;
+    text-align: center;    
+    letter-spacing: 0.3px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: all 0.3s ease-in-out 0s;
+    width: 25%;
+    margin-top: 10px;
+    border-radius: 3px;
+    margin-bottom: 5px;
+}
+
+.savebutton :hover{
+    border-color: #444;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out 0s;
+}
 

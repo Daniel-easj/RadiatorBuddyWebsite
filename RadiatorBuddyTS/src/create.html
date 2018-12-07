@@ -18,34 +18,35 @@
     <table>
       <thead>
         <tr>
-          <td colspan="2"><h1>Create new room</h1></td>
+          <td colspan="2"><h1>Tilføj nyt rum</h1></td>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td class="lefttd">Room name</td>
+          <td class="lefttd">Rum navn</td>
           <td>
-            <input placeholder="name" class="input"/>
+            <input placeholder="Navn" class="input" id="lname"/>
           </td>
         </tr>
         <tr>
-          <td class="lefttd">Sensor MacAdress</td>
+          <td class="lefttd">Sensor MacAddress</td>
           <td>
             <select id="sensorselect"></select>
           </td>
         </tr>
         <tr>
-          <td class="lefttd">In or ourside</td>
+          <td class="lefttd">Ind eller udenfor</td>
           <td>
-            <form>
-              <input type="radio" name="indoor" value="true"> Indoor <br>
-              <input type="radio" name="indoor" value="false">Outside
-            </form>
+            <select id="inorout">
+              <option value="true">Ja</option>
+              <option value="false">Nej</option>
+            </select>
           </td>
         </tr>
       </tbody>
     </table>
-    <a class="button" href="room.html" style="text-decoration: none">Create</a>
+    <button class="button" id="createroom">Opret</button>
+    <a class="button" href="room.html" style="text-decoration: none">Tilbage</a>
   </div>
   <script src="bundle.js"></script>
 </body>
