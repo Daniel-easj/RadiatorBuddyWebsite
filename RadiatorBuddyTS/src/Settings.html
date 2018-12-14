@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Statestic - Radiator Buddy</title>
+  <link rel="stylesheet" type="text/css" href="bundle.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+</head>
+
+<body>
+  <header>
+    <nav class="topnav">
+      <a href="index.htm">Hjem</a>
+      <a href="room.html">Rum</a>
+      <a  href="Statestic.html" id="stat">Statestik</a>
+      <div class="topnav-right">
+        <a href="Settings.html" class="active"><i class="fa fa-fw fa-cog"></i></a>
+      </div>
+    </nav>
+  </header>
+
+  <div id="settings">
+        <table>
+          <thead>
+            <tr>
+              <td colspan="2"><h1>Indstillinger</h1></td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="lefttd">Global optimal temperatur</td>
+              <td>
+                <input class="input" type="number" id="otemp"/>
+              </td>
+            </tr>
+            <tr>
+              <td class="lefttd">Global maksimum temperatur</td>
+              <td>
+                    <input class="input" type="number" id="maxtemp"/>
+              </td>
+            </tr>
+            <tr>
+              <td class="lefttd">Global minmum temperatur</td>
+              <td>
+                    <input class="input" type="number" id="mintemp"/>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <button class="button" id="Settingssave">Gem ændringer</button>
+        <a class="button" href="index.htm" style="text-decoration: none">Tilbage</a>
+  <script src="bundle.js"></script>
+</body>
+</html>

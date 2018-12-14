@@ -1,76 +1,52 @@
 import axios, {AxiosRequestConfig, AxiosPromise} from "axios";
 import {Room} from "./room"
+import {Create} from "./create"
+import {Settings} from "./settings"
+import {Home} from "./home"
     
 let baseURL: string = 'https://radiatorbuddy.azurewebsites.net/api';
 
 let room = new Room;
+let create = new Create;
+let settings = new Settings;
+let home = new Home;
 let url = window.location.pathname;
 let navigate = url.substring(url.lastIndexOf('/')+1)
-let coll: HTMLCollection = <HTMLCollection> document.getElementsByClassName("collapsible")
-let savecoll: HTMLCollection = <HTMLCollection> document.getElementsByClassName("savebutton")
 let createroom: HTMLButtonElement = <HTMLButtonElement> document.getElementById("createroom")
+let gbutton: HTMLButtonElement = <HTMLButtonElement> document.getElementById("Settingssave")
 let homediv: HTMLDivElement = <HTMLDivElement> document.getElementById("homediv")
 
 async function check(){
     if (navigate === "room.html"){
-        //room.getMacadresses();
         await room.getrooms();
+        room.checkopenroom()
+        room.checksave()
+        room.checkdelete()
     }
     else if(navigate === "create.html"){
-        room.setupCreate();
+        create.setupCreate();
         createbutton();
     }  
-    checkopenroom()
-    checksave()
-    //console.log(coll.length)
+    else if(navigate === "Settings.html"){
+        settings.getudata();
+        globalbutton();
+    }
+    else if(navigate === "index.htm"){
+        await home.getrooms()
+    }
+
 }
 
 function createbutton(){
     createroom.addEventListener("click", function() {
-        room.posttodb();
+        create.posttodb();
     })    
 }
 
-function checkopenroom(){
-for(var i = 0; i < coll.length; i++){
-    coll[i].addEventListener("click", function() {
-        this.classList.toggle("active")
-        var content = this.nextElementSibling;
-        if (content.style.maxHeight){
-            content.style.maxHeight = null;
-        }
-        else{
-            content.style.maxHeight = content.scrollHeight + "px";
-        }
-    });
-}
+function globalbutton(){
+    gbutton.addEventListener("click", function(){
+        settings.setglobltemps();
+    })
 }
 
-function checksave(){
-    console.log(room.roomarray)
-    for(let i = 0; i < savecoll.length; i++){
-        savecoll[i].addEventListener("click", function(){
-            console.log(i)
-            let location: HTMLInputElement = <HTMLInputElement> document.getElementById("roomid" + i)
-            console.log(location.id)
-            let inorout: HTMLInputElement = <HTMLInputElement> document.getElementById("iuid" + i)
-            console.log(inorout.id)
-            let temperature: HTMLInputElement = <HTMLInputElement> document.getElementById("tempid" + i)
-            console.log(temperature.id)
-            if(location.value === null){
-                location.value = location.placeholder;
-            }
-            if(temperature.value === null){
-                temperature.value = temperature.placeholder;
-            }
-            axios.put(baseURL + '/sensorsdata/rooms', {
-                macAddress: room.roomarray[i],
-                location: location.value,
-                inDoor: inorout.value,
-                optimalTemperature: temperature.value
-            })
-        })
-    }
-}
-checksave()
 check()
