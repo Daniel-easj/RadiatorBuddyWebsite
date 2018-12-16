@@ -35,10 +35,10 @@ export class Home{
 
                     if(tempstring[0] === i.id){
                         if(tempstring[1] === "true"){
-                            tempiarray.push(("Temp: " + i.temperature + " Time: " + i.timestamp))
+                            tempiarray.push(("Temperatur: " + i.temperature + " Tidspunkt: " + i.timestamp))
                         }
                         else if(tempstring[1] === "false"){
-                            tempuarray.push(("Temp: " + i.temperature + " Time: " + i.timestamp))
+                            tempuarray.push(("Temperatur: " + i.temperature + " Tidspunkt: " + i.timestamp))
                         }
                     }
                 }
@@ -102,13 +102,13 @@ export class Home{
         tr = table.appendChild(document.createElement("tr"))
         td = tr.appendChild(document.createElement("td"))
         td.setAttribute("class", "buttomtd1")
-        td.innerHTML = "Gennemsnit inde temp"
+        td.innerHTML = "Gennemsnitslig inde temp"
         td = tr.appendChild(document.createElement("td"))
         td.setAttribute("class", "buttomtd1")
-        td.innerHTML = "Gennemsnit ude temp"
+        td.innerHTML = "Gennemsnitslig ude temp"
         td = tr.appendChild(document.createElement("td"))
         td.setAttribute("class", "buttomtd1")
-        td.innerHTML = "Vejr-udsigt"
+        td.innerHTML = "Gennemsnitslig vejr temp"
     }
 
     setuplists(){

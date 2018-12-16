@@ -128,14 +128,14 @@ export class Room {
                     input.setAttribute("placeholder", d.location);
 
                     trow = thead.appendChild(document.createElement("tr"))
-                    trow.appendChild(document.createElement("td")).innerHTML = "Sensor Mac-Adress"
+                    trow.appendChild(document.createElement("td")).innerHTML = "Sensor Mac-Adresse"
                     td = trow.appendChild(document.createElement("td"))
                     td.setAttribute("class", "mactext")
                     td.setAttribute("id", macid)
                     td.innerHTML = d.macAddress
 
                     trow = thead.appendChild(document.createElement("tr"))
-                    trow.appendChild(document.createElement("td")).innerHTML = "ind eller udenfor"
+                    trow.appendChild(document.createElement("td")).innerHTML = "Indenfor"
                     td = trow.appendChild(document.createElement("td"))
                     let select = td.appendChild(document.createElement("select"))
                     select.setAttribute("id", iuid)
